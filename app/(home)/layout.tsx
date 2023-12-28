@@ -1,14 +1,19 @@
+
+import UserFooter from "@/components/footer/user-footer";
 import UserNavbar from "@/components/user-navbar";
-import  {ReactNode}  from "react";
 const UserLayout= ({
     children,
 }: {
     children: React.ReactNode;
 }) => {
+    
     return (
         <section>
-            <UserNavbar/>
+            <div className={``}>
+                <UserNavbar/>
+            </div>
             {children}
+            <UserFooter/>
         </section>
      );
 }
