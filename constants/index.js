@@ -1,5 +1,5 @@
 import { GoHomeFill } from "react-icons/go";
-import { BsPeople } from "react-icons/bs";
+import { BsMessenger, BsPeople, BsPerson, BsSearch , BsBell } from "react-icons/bs";
 import { IoCreate } from "react-icons/io5";
 import { FaRegMessage } from "react-icons/fa6";
 
@@ -222,4 +222,28 @@ export const heroNew = [
       date: "4 days ago",
     },
   ];
+
+  export const FamilyNavigation = [
+    {
+        title : "News",
+        icon : GoHomeFill,
+        url : "/family/AERG",
+        onclick : () => {"home"}
+    },
+    {
+        title : "Search",
+        icon : BsSearch,
+        url : "/family/AERG/search"
+    },
+    {
+        title : "Messenger",
+        icon : BsMessenger,
+        url : "/family/AERG/messenger"
+    },
+    {
+        title : "notification",
+        icon : BsBell,
+        url : "/family/AERG/profile/userName"
+    },
+  ]
   
