@@ -10,6 +10,7 @@ interface InputProps {
     placeholder : string;
     type ?: string;
     required ?: boolean;
+    outFocus ?: boolean
     register: UseFormRegister<FieldValues>;
     errors : FieldErrors;
     disabled?: boolean;
