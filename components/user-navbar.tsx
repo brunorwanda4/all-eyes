@@ -1,29 +1,49 @@
 "use client";
 
-import React from "react"
-import Logo from "./logo";
-import { ModeToggle } from "./mode-toggle";
+import React, { useEffect, useState } from "react"
 import { FiLogIn } from "react-icons/fi";
 import Link from "next/link";
-import { Button } from "./ui/button";
 import { BsList, BsX ,BsPerson} from "react-icons/bs";
-import {usePathname, useRouter} from "next/navigation";
+import {usePathname,} from "next/navigation";
 import { useTheme } from "next-themes"
-
-import { navbarListUser } from "@/constants/index"
-import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerTitle, DrawerTrigger } from "./ui/drawer";
 import clsx from "clsx";
 import { Moon, Sun } from "lucide-react";
 import { HiArrowLeftOnRectangle } from "react-icons/hi2";
 
-const UserNavbar = () => {
+// local page
 
-    const router = useRouter();
+import Logo from "./logo";
+import { Button } from "./ui/button";
+import { ModeToggle } from "./mode-toggle";
+import { navbarListUser } from "@/constants/index"
+import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerTitle, DrawerTrigger } from "./ui/drawer";
+
+const UserNavbar = () => {
+    // scrolling hidden nav bar
+    const [scroll , setScroll ] = useState<boolean>(false);
+
+    useEffect(() => {
+        let scrollDown = window.pageYOffset;
+        const handleScroll = () => {
+            const currentScrollPos = window.pageYOffset;
+            const scrollingDown = currentScrollPos > scrollDown;
+
+            setScroll(scrollingDown);
+            scrollDown = currentScrollPos;
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll" , handleScroll);
+        };
+    },[]);
+
     const pathname = usePathname();
     const { setTheme } = useTheme()
 
     return ( 
-        <nav className=" flex gap-4 w-full justify-between items-center px-4 py-2 backdrop-blur fixed z-50">
+        <nav className={clsx("flex gap-4 w-full justify-between items-center px-4 py-2 backdrop-blur fixed z-50", scroll ? " hidden" : "")}>
             <div className=" flex gap-2 ">
                 <Logo/>
                 {/* mobile */}
