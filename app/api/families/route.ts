@@ -1,5 +1,5 @@
-import connectMongoDB  from '@/lib/mongodb';
 import Families from "@/lib/models/families";
+import { connectMongoDB } from "@/lib/mongodb";
 import { NextResponse } from "next/server";
 
 export const POST = async (request : Request) => {

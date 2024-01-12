@@ -4,10 +4,9 @@ import UserUploadNews from "@/components/card/user-upload-news";
 
 const ProfileUserPage = () => {
     return ( 
-        <section className=" h-screen w-full pt-20 flex gap-3 justify-between flex-col ">
+        <section className="w-full pt-20 flex gap-3 justify-between flex-col ">
             <UserInfProfilePage/>
             <UserNewsProfilePage/>
-            <UserUploadNews/>
         </section>
      );
 }

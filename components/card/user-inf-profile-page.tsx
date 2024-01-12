@@ -6,7 +6,7 @@ import { BsCamera, BsFacebook, BsInstagram, BsTwitterX } from "react-icons/bs";
 
 const UserInfProfilePage = () => {
     return ( 
-        <div className=" flex  gap-4  border-b border-gray-500 pb-4 px-2">
+        <div className=" flex  gap-4  border-b border-gray-500 pb-4 px-2 ">
            <div >
                 <Image
                     src={"/bruno.jpg"}
@@ -22,16 +22,16 @@ const UserInfProfilePage = () => {
                     <h2 className=" text-sky-400 hidden md:flex">Bruno Rwanda</h2>
                     {/* if is my profile */}
                     <div>
-                        <Button size="sm" className=" btn-sm btn  hover:bg-sky-400 duration-300 ">
+                        <Button size="sm" className=" btn-sm btn  hover:bg-sky-400 duration-300 dark:bg-gray-900 dark:text-white">
                             Edit profile
                         </Button>
                     </div>
                 </div>
                  <div className=" flex gap-2">
-                    <Button className=" btn ">
+                    <Button className=" btn dark:bg-gray-900 dark:text-white">
                         Posts <span>0</span>
                     </Button>
-                    <Button className=" btn">
+                    <Button className=" btn dark:bg-gray-900 dark:text-white">
                         Families <span>0</span>
                     </Button>
                  </div>

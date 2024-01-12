@@ -2,6 +2,7 @@ import mongoose, { Document, Schema } from "mongoose";
 
 interface IUser extends Document {
   username: string;
+  avatar: string;
   email: string;
   name: string;
   family?: mongoose.Schema.Types.ObjectId[];
@@ -26,6 +27,10 @@ const UserSchema = new Schema<IUser>(
     family: {
       type: [Schema.Types.ObjectId],
       ref: "Family",
+    },
+    avatar : {
+      type: String,
+      required: false,
     },
     news: {
       type: [Schema.Types.ObjectId],

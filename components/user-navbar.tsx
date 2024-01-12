@@ -4,21 +4,23 @@ import React from "react"
 import Logo from "./logo";
 import { ModeToggle } from "./mode-toggle";
 import { FiLogIn } from "react-icons/fi";
-import { IoCreate } from "react-icons/io5";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { BsList, BsX ,BsPerson} from "react-icons/bs";
 import {usePathname, useRouter} from "next/navigation";
+import { useTheme } from "next-themes"
 
 import { navbarListUser } from "@/constants/index"
 import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerTitle, DrawerTrigger } from "./ui/drawer";
+import clsx from "clsx";
+import { Moon, Sun } from "lucide-react";
+import { HiArrowLeftOnRectangle } from "react-icons/hi2";
 
 const UserNavbar = () => {
 
     const router = useRouter();
     const pathname = usePathname();
-
-
+    const { setTheme } = useTheme()
 
     return ( 
         <nav className=" flex gap-4 w-full justify-between items-center px-4 py-2 backdrop-blur fixed z-50">
@@ -26,40 +28,61 @@ const UserNavbar = () => {
                 <Logo/>
                 {/* mobile */}
                 <div className=" lg:hidden flex">
-                    <Drawer>
-                        <DrawerTrigger>
-                            <Button className=" btn bg-transparent dark:text-white text-black">
+                    <Drawer >
+                        <DrawerTrigger >
+                            <Button className=" btn bg-sky-500 border-none text-white dark:bg-gray-900 dark:hover:bg-sky-500 duration-300">
                                 <BsList/>
                             </Button>
-                            <DrawerContent>
+                            <DrawerContent className=" px-2">
                                 <DrawerTitle>
                                     <div className=" flex justify-between">
                                         <div className=" flex ">
                                             <Logo/>
                                             <span className=" mt-4 text-sky-400 ">Navigation Bar</span>
                                         </div>
-                                        <DrawerClose>
-                                            <Button className=" text-2xl bg-transparent text-white hover:text-black focus:text-black">
-                                                <BsX/>
-                                            </Button>
-                                        </DrawerClose>
                                     </div>
                                 </DrawerTitle>
                                 <DrawerDescription>
-                                    <ul className="gap-4 flex flex-col  mb-4">
+                                    <ul className="gap-4 flex flex-col  mb-4 mt-2">
                                         {navbarListUser.map((link) => {
                                             const isActive = pathname === link.url;
                                             return <li
                                             key = {link.title}
                                             >
-                                                <Link href={link.url} className={`flex gap-2 hover:text-sky-400 font-semibold duration-300 ${isActive && "text-sky-400"}`}>
-                                                    <link.icon className="text-xl"/>
+                                                <Link href={link.url} className={`flex gap-2 text-lg hover:text-sky-400 font-semibold py-2 rounded-md duration-300  text-black ${isActive ? "text-sky-400 bg-sky-100 dark:bg-gray-900" : " dark:text-white "}`}>
+                                                    <link.icon className="text-2xl"/>
                                                     <span>{link.title}</span>
                                                 </Link>
                                             </li>
                                         })}
+                                        <li>Other setting</li>
+                                        <li>
+                                            <Link href={"/profile/bruno_rwanda"} className={clsx("flex gap-2 font-semibold py-2 rounded-md text-lg", pathname === "/profile/bruno_rwanda" ? "text-sky-400 bg-sky-100 dark:bg-gray-900" : " dark:text-white text-black")}>
+                                                <BsPerson className=" text-3xl"/>
+                                                <span className=" ">Profile</span>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <button type="button" onClick={() => setTheme("light")} className=" gap-2 cursor-pointer  dark:flex hidden group hover:dark:bg-gray-900 duration-300 w-full py-2 rounded-md">
+                                                <Moon className=" dark:block hidden text-black dark:text-white group-hover:text-sky-500 duration-300"/>
+                                                <span className=" text-lg font-semibold text-black dark:text-white group-hover:text-sky-500 duration-300">Themes</span>
+                                            </button>
+                                            <button type="button" onClick={() => setTheme("dark")} className=" flex gap-2 cursor-pointer   dark:hidden group hover:dark:bg-gray-900 duration-300 w-full py-2 rounded-md">
+                                                <Sun className=" dark:hidden block text-black dark:text-white group-hover:text-sky-500 duration-300"/>
+                                                <span className=" text-lg font-semibold text-black dark:text-gray-500 group-hover:text-sky-500 duration-300">Themes</span>
+                                            </button>
+                                        </li>
+                                        <li className="text-rose-500 flex gap-2  dark:hover:bg-rose-950 py-2 rounded-md cursor-pointer">
+                                            <HiArrowLeftOnRectangle className=" text-2xl "/>
+                                            <span className=" text-lg font-semibold">Logout</span>
+                                        </li>
                                     </ul>
                                 </DrawerDescription>
+                                    <DrawerClose>
+                                        <Button className=" bg-transparent text-rose-500 text-2xl font-bold hover:bg-rose-300 dark:hover:bg-rose-900  duration-300 bg-rose-100 w-full mb-1 dark:bg-rose-950">
+                                          <span className=" text-sm ">cancer</span>
+                                        </Button>
+                                    </DrawerClose>
                             </DrawerContent>
                         </DrawerTrigger>
                     </Drawer>
@@ -79,24 +102,24 @@ const UserNavbar = () => {
                     </li>
                 })}
             </ul>
-            <div className=" gap-4 items-center lg:flex hidden ">
+            <div className=" gap-4 items-center flex ">
                 <div className=" flex gap-4 w-full">
                     <Link href={"/profile/bruno_rwanda"} className=" flex gap-2 hover:text-sky-400 duration-300">
                        <BsPerson className="text-xl"/>
-                       Bruno_rwanda
+                       <span className=" lg:flex hidden">Bruno_rwanda</span>
                     </Link>
                     <div>
-                        <Link href={"/create-account"} className=" flex gap-2 hover:text-sky-400 duration-300 group">
+                        <Link href={"/create-account"} className=" flex gap-2 hover:text-rose-500 duration-300 group">
                             <FiLogIn className="text-xl group-hover:scale-105 " />
-                            Logout
+                            <span  className=" lg:flex hidden">Logout</span>
                         </Link>
                     </div>
                 </div>
                 <ModeToggle/>
             </div>
-            <div className=" flex lg:hidden">
+            {/* <div className=" flex lg:hidden">
                 <ModeToggle/>
-            </div>
+            </div> */}
         </nav>
      );
 }

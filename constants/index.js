@@ -1,99 +1,129 @@
 import { GoHomeFill } from "react-icons/go";
-import { BsMessenger, BsPeople, BsPerson, BsSearch , BsBell } from "react-icons/bs";
+import {
+  BsPeople,
+  BsPerson,
+  BsSearch,
+  BsBell,
+} from "react-icons/bs";
 import { IoCreate } from "react-icons/io5";
 import { FaRegMessage } from "react-icons/fa6";
+import { LuPlusSquare } from "react-icons/lu";
+import { IoIosCreate } from "react-icons/io";
 
-export const navbarListUser =[
-    {
-        title : "News",
-        icon : GoHomeFill,
-        url : "/"
-    },
-    {
-        title : "Family",
-        icon : BsPeople,
-        url : "/families"
-    },
-    {
-        title : "Contacts",
-        icon : FaRegMessage,
-        url : "/contact"
-    },
-]
+export const navbarListUser = [
+  {
+    title: "News",
+    icon: GoHomeFill,
+    url: "/",
+  },
+  {
+    title: "Family",
+    icon: BsPeople,
+    url: "/families",
+  },
+  {
+    title: "Create",
+    icon: IoIosCreate,
+    url: "/create",
+  },
+];
 
 export const family = [
-    {
-        name : "Peace and love",
-        username: "PLP",
-        bio: "peace and love family",
-        image : "/plp-logo.jpg",
-        link: "/family/PLP",
-        members: 43,
-    },
-    {
-        name : "Rwanda remember",
-        username: "AERG",
-        bio: "family of AERG Rwanda",
-        image : "/boy.svg",
-        link: "/family/AERG",
-        members: 76,
-    },
-]
+  {
+    name: "Peace and love",
+    username: "PLP",
+    bio: "peace and love family",
+    image: "/plp-logo.jpg",
+    link: "/family/PLP",
+    members: 43,
+  },
+  {
+    name: "Rwanda remember",
+    username: "AERG",
+    bio: "family of AERG Rwanda",
+    image: "/boy.svg",
+    link: "/family/AERG",
+    members: 76,
+  },
+];
 
 export const popularNews = [
-    {
-        title: "PLP family want they do in 12/12/2023",
-        date: "4 days ago",
-        description: "plp family they help people From kinyinya sector give student book and other student property can use in school",
-        logo: "/plp-logo.jpg",
-        image: "/004.jpg",
-        name: "PLP"
-    },
-    {
-        title: "PLP family want they do in 12/12/2023",
-        date: "4 days ago",
-        description: "plp family they help people From kinyinya sector give student book and other student property can use in school",
-        logo: "/plp-logo.jpg",
-        image: "/004.jpg",
-        name: "PLP" 
-    },
-    {
-        title: "PLP family want they do in 12/12/2023",
-        date: "4 days ago",
-        description: "plp family they help people From kinyinya sector give student book and other student property can use in school",
-        logo: "/plp-logo.jpg",
-        image: "/plp-logo.jpg",
-        name: "PLP"
-    },
-    {
-        title: "PLP family want they do in 12/12/2023",
-        date: "4 days ago",
-        description: "plp family they help people From kinyinya ",
-        logo: "/plp-logo.jpg",
-        image: "/004.jpg",
-        name: "PLP"
-    },
-    {
-        title: "PLP family want they do in 12/12/2023",
-        date: "4 days ago",
-        description: "plp family they help people From kinyinya sector give student book and other student property can use in school",
-        logo: "/plp-logo.jpg",
-        image: "/004.jpg",
-        name: "PLP"
-    },
-    {
-        title: "PLP family want they do in 12/12/2023",
-        date: "4 days ago",
-        description: "plp family they help people From kinyinya sector give student book and other student property can use in school",
-        logo: "/plp-logo.jpg",
-        image: "/004.jpg",
-        name: "PLP"
-    },
-]
+  {
+    title: "they do in 12/12/2023",
+    date: "4 days ago",
+    description:
+      "plp family they help people From kinyinya sector give student book and other student property can use in school",
+    logo: "/plp-logo.jpg",
+    image: "/004.jpg",
+    name: "PLP",
+  },
+  {
+    title: "Home alone again",
+    date: "4 days ago",
+    description:
+      "plp family they help people From kinyinya sector give student book and other student property can use in school",
+    logo: "/plp-logo.jpg",
+    image: "/004.jpg",
+    name: "Bruno_rwanda",
+  },
+  {
+    title: "Best school in Rwanda",
+    date: "4 days ago",
+    description:
+      "plp family they help people From kinyinya sector give student book and other student property can use in school",
+    logo: "/bruno.jpg",
+    image: "/004.jpg",
+    name: "Allen_Bruno",
+  },
+  {
+    title: "What is you name",
+    date: "4 days ago",
+    description:
+      "plp family they help people From kinyinya sector give student book and other student property can use in school",
+    logo: "/plp-logo.jpg",
+    image: "/004.jpg",
+    name: "PLP",
+  },
+  {
+    title: "What is you favorite color",
+    date: "4 days ago",
+    description:
+      "plp family they help people From kinyinya sector give student book and other student property can use in school",
+    logo: "/plp-logo.jpg",
+    image: "/plp-logo.jpg",
+    name: "PLP",
+  },
+  {
+    title: "Why people love to have family in school",
+    date: "4 days ago",
+    description: "plp family they help people From kinyinya ",
+    logo: "/plp-logo.jpg",
+    image: "/004.jpg",
+    name: "PLP",
+  },
+  {
+    title: " i can not remember this school ",
+    date: "4 days ago",
+    description:
+      "plp family they help people From kinyinya sector give student book and other student property can use in school",
+    logo: "/plp-logo.jpg",
+    image: "/004.jpg",
+    name: "PLP",
+  },
+  {
+    title: "Do you know Rwanda Bruno Happy heart",
+    date: "4 days ago",
+    description:
+      "plp family they help people From kinyinya sector give student book and other student property can use in school",
+    logo: "/plp-logo.jpg",
+    image: "/004.jpg",
+    name: "PLP",
+  },
+];
 export const heroNew = [
-    {
-      title: "PLP family want they do in 12/12/2023",
-      description: `Once upon a time in the quaint town of Harmonyville, there lived the PLP family – a peculiar and enchanting family known for their unique abilities and magical qualities. The PLP family consisted of four members: Penelope, the eldest and wise matriarch; Leo, the mischievous and adventurous son; Primrose, the sweet and gentle daughter; and Percival, the baby of the family who possessed extraordinary powers.
+  {
+    title: " charming cottage nestled at the edge of the Enchanted",
+    description: `Once upon a time in the quaint town of Harmonyville, there lived the PLP family – a peculiar and enchanting family known for their unique abilities and magical qualities. The PLP family consisted of four members: Penelope, the eldest and wise matriarch; Leo, the mischievous and adventurous son; Primrose, the sweet and gentle daughter; and Percival, the baby of the family who possessed extraordinary powers.
   
             The PLP family lived in a charming cottage nestled at the edge of the Enchanted Forest. Penelope, with her silver hair and sparkling blue eyes, was a skilled herbalist and wise woman who knew the secrets of the magical plants that grew in the forest. Leo, the energetic and curious teenager, had the ability to talk to animals and often ventured into the woods accompanied by his animal friends.
             
@@ -112,14 +142,14 @@ export const heroNew = [
             And so, the PLP family returned to their cottage with hearts full of joy and a renewed sense of purpose. They continued to live in Harmonyville, using their magical abilities to bring joy and wonder to the townsfolk, and their story became a cherished legend in the enchanted town.
             
             And thus, the PLP family's tale became a timeless story of love, magic, and the extraordinary bonds that exist within families.`,
-      logo: "/plp-logo.jpg",
-      image: "/004.jpg",
-      name: "PLP",
-      date: "4 days ago",
-    },
-    {
-      title: "PLP family want they do in 12/12/2023",
-      description: `Once upon a time in the quaint town of Harmonyville, there lived the PLP family – a peculiar and enchanting family known for their unique abilities and magical qualities. The PLP family consisted of four members: Penelope, the eldest and wise matriarch; Leo, the mischievous and adventurous son; Primrose, the sweet and gentle daughter; and Percival, the baby of the family who possessed extraordinary powers.
+    logo: "/plp-logo.jpg",
+    image: "/004.jpg",
+    name: "PLP",
+    date: "4 days ago",
+  },
+  {
+    title: " upon a time in the quaint town of Harmonyville, there lived the PLP family",
+    description: `Once upon a time in the quaint town of Harmonyville, there lived the PLP family – a peculiar and enchanting family known for their unique abilities and magical qualities. The PLP family consisted of four members: Penelope, the eldest and wise matriarch; Leo, the mischievous and adventurous son; Primrose, the sweet and gentle daughter; and Percival, the baby of the family who possessed extraordinary powers.
   
             The PLP family lived in a charming cottage nestled at the edge of the Enchanted Forest. Penelope, with her silver hair and sparkling blue eyes, was a skilled herbalist and wise woman who knew the secrets of the magical plants that grew in the forest. Leo, the energetic and curious teenager, had the ability to talk to animals and often ventured into the woods accompanied by his animal friends.
             
@@ -138,14 +168,14 @@ export const heroNew = [
             And so, the PLP family returned to their cottage with hearts full of joy and a renewed sense of purpose. They continued to live in Harmonyville, using their magical abilities to bring joy and wonder to the townsfolk, and their story became a cherished legend in the enchanted town.
             
             And thus, the PLP family's tale became a timeless story of love, magic, and the extraordinary bonds that exist within families.`,
-      logo: "/plp-logo.jpg",
-      image: "/004.jpg",
-      name: "PLP",
-      date: "4 days ago",
-    },
-    {
-      title: "PLP family want they do in 12/12/2023",
-      description: `Once upon a time in the quaint town of Harmonyville, there lived the PLP family – a peculiar and enchanting family known for their unique abilities and magical qualities. The PLP family consisted of four members: Penelope, the eldest and wise matriarch; Leo, the mischievous and adventurous son; Primrose, the sweet and gentle daughter; and Percival, the baby of the family who possessed extraordinary powers.
+    logo: "/plp-logo.jpg",
+    image: "/004.jpg",
+    name: "PLP",
+    date: "4 days ago",
+  },
+  {
+    title: " tale became a timeless story of love, ",
+    description: `Once upon a time in the quaint town of Harmonyville, there lived the PLP family – a peculiar and enchanting family known for their unique abilities and magical qualities. The PLP family consisted of four members: Penelope, the eldest and wise matriarch; Leo, the mischievous and adventurous son; Primrose, the sweet and gentle daughter; and Percival, the baby of the family who possessed extraordinary powers.
   
             The PLP family lived in a charming cottage nestled at the edge of the Enchanted Forest. Penelope, with her silver hair and sparkling blue eyes, was a skilled herbalist and wise woman who knew the secrets of the magical plants that grew in the forest. Leo, the energetic and curious teenager, had the ability to talk to animals and often ventured into the woods accompanied by his animal friends.
             
@@ -164,14 +194,14 @@ export const heroNew = [
             And so, the PLP family returned to their cottage with hearts full of joy and a renewed sense of purpose. They continued to live in Harmonyville, using their magical abilities to bring joy and wonder to the townsfolk, and their story became a cherished legend in the enchanted town.
             
             And thus, the PLP family's tale became a timeless story of love, magic, and the extraordinary bonds that exist within families.`,
-      logo: "/plp-logo.jpg",
-      image: "/004.jpg",
-      name: "PLP",
-      date: "4 days ago",
-    },
-    {
-      title: "PLP family want they do in 12/12/2023",
-      description: `Once upon a time in the quaint town of Harmonyville, there lived the PLP family – a peculiar and enchanting family known for their unique abilities and magical qualities. The PLP family consisted of four members: Penelope, the eldest and wise matriarch; Leo, the mischievous and adventurous son; Primrose, the sweet and gentle daughter; and Percival, the baby of the family who possessed extraordinary powers.
+    logo: "/plp-logo.jpg",
+    image: "/004.jpg",
+    name: "PLP",
+    date: "4 days ago",
+  },
+  {
+    title: "golden locks and kind heart, had the gift of healing touch",
+    description: `Once upon a time in the quaint town of Harmonyville, there lived the PLP family – a peculiar and enchanting family known for their unique abilities and magical qualities. The PLP family consisted of four members: Penelope, the eldest and wise matriarch; Leo, the mischievous and adventurous son; Primrose, the sweet and gentle daughter; and Percival, the baby of the family who possessed extraordinary powers.
   
             The PLP family lived in a charming cottage nestled at the edge of the Enchanted Forest. Penelope, with her silver hair and sparkling blue eyes, was a skilled herbalist and wise woman who knew the secrets of the magical plants that grew in the forest. Leo, the energetic and curious teenager, had the ability to talk to animals and often ventured into the woods accompanied by his animal friends.
             
@@ -190,14 +220,14 @@ export const heroNew = [
             And so, the PLP family returned to their cottage with hearts full of joy and a renewed sense of purpose. They continued to live in Harmonyville, using their magical abilities to bring joy and wonder to the townsfolk, and their story became a cherished legend in the enchanted town.
             
             And thus, the PLP family's tale became a timeless story of love, magic, and the extraordinary bonds that exist within families.`,
-      logo: "/bruno.jpg",
-      image: "/bruno.jpg",
-      name: "PLP",
-      date: "4 days ago",
-    },
-    {
-      title: "PLP family want they do in 12/12/2023",
-      description: `Once upon a time in the quaint town of Harmonyville, there lived the PLP family – a peculiar and enchanting family known for their unique abilities and magical qualities. The PLP family consisted of four members: Penelope, the eldest and wise matriarch; Leo, the mischievous and adventurous son; Primrose, the sweet and gentle daughter; and Percival, the baby of the family who possessed extraordinary powers.
+    logo: "/bruno.jpg",
+    image: "/bruno.jpg",
+    name: "PLP",
+    date: "4 days ago",
+  },
+  {
+    title: "locks and kind heart, had the gift of healing touch",
+    description: `Once upon a time in the quaint town of Harmonyville, there lived the PLP family – a peculiar and enchanting family known for their unique abilities and magical qualities. The PLP family consisted of four members: Penelope, the eldest and wise matriarch; Leo, the mischievous and adventurous son; Primrose, the sweet and gentle daughter; and Percival, the baby of the family who possessed extraordinary powers.
   
             The PLP family lived in a charming cottage nestled at the edge of the Enchanted Forest. Penelope, with her silver hair and sparkling blue eyes, was a skilled herbalist and wise woman who knew the secrets of the magical plants that grew in the forest. Leo, the energetic and curious teenager, had the ability to talk to animals and often ventured into the woods accompanied by his animal friends.
             
@@ -216,34 +246,9 @@ export const heroNew = [
             And so, the PLP family returned to their cottage with hearts full of joy and a renewed sense of purpose. They continued to live in Harmonyville, using their magical abilities to bring joy and wonder to the townsfolk, and their story became a cherished legend in the enchanted town.
             
             And thus, the PLP family's tale became a timeless story of love, magic, and the extraordinary bonds that exist within families.`,
-      logo: "/plp-logo.jpg",
-      image: "/004.jpg",
-      name: "PLP",
-      date: "4 days ago",
-    },
-  ];
-
-  export const FamilyNavigation = [
-    {
-        title : "News",
-        icon : GoHomeFill,
-        url : "/family/AERG",
-        onclick : () => {"home"}
-    },
-    {
-        title : "Search",
-        icon : BsSearch,
-        url : "/family/AERG/search"
-    },
-    {
-        title : "Messenger",
-        icon : BsMessenger,
-        url : "/family/AERG/messenger"
-    },
-    {
-        title : "notification",
-        icon : BsBell,
-        url : "/family/AERG/profile/userName"
-    },
-  ]
-  
+    logo: "/plp-logo.jpg",
+    image: "/004.jpg",
+    name: "PLP",
+    date: "4 days ago",
+  },
+];
