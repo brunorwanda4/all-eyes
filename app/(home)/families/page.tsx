@@ -28,7 +28,7 @@ const getFamilies = async () => {
 const FamiliesPage = async () => {
     const Families= await getFamilies();
     return ( 
-        <section className=" w-full  md:h-screen h-full justify-center items-center gap-4 grid grid-cols-5 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-2 px-2">
+        <section className=" w-full  h-full justify-center items-center gap-4 grid grid-cols-5 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-2 px-2 pt-20">
             {family.map((families) => {
                 return <div key={families.username} className=" bg-white p-3 rounded-md shadow-md dark:bg-gray-900 flex flex-col justify-center items-center h-64 w-60 max-sm:w-56 border border-e border-sky-500 dark:">
                     <Image
@@ -41,7 +41,7 @@ const FamiliesPage = async () => {
                     <h2 className=" text-2xl font-semibold text-sky-400 ">{families.username}</h2>
                     <span>{families.name}</span>
                     <span className=" text-sm text-gray-400 font-thin">Members {families.members}</span>
-                    <Link href={families.link} className=" btn  bg-sky-400 text-white border-none hover:bg-sky-700 duration-300">
+                    <Link href={`/families/${families.username}/register`} className=" btn  bg-sky-400 text-white border-none hover:bg-sky-700 duration-300">
                         Go To {families.name}
                     </Link>
                 </div>

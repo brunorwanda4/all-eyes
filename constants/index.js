@@ -1,10 +1,5 @@
 import { GoHomeFill } from "react-icons/go";
-import {
-  BsPeople,
-  BsPerson,
-  BsSearch,
-  BsBell,
-} from "react-icons/bs";
+import { BsPeople, BsPerson, BsSearch, BsBell, BsFacebook, BsInstagram } from "react-icons/bs";
 import { IoCreate } from "react-icons/io5";
 import { FaRegMessage } from "react-icons/fa6";
 import { LuPlusSquare } from "react-icons/lu";
@@ -44,6 +39,31 @@ export const family = [
     image: "/boy.svg",
     link: "/family/AERG",
     members: 76,
+  },
+  {
+    name: "2023 New children",
+    username: "2023",
+    bio: "2023 new student in SOS school",
+    image: "/boy.svg",
+    link: "/family/2023",
+    members: 103,
+  },
+  {
+    name: "HHHH",
+    username: "4H",
+    bio: "bruno Rwanda Family hhhh no more",
+    image: "/boy.svg",
+    link: "/family/4H",
+    members: 32
+    ,
+  },
+  {
+    name: "birahagije",
+    username: "OK 😔😔😔",
+    bio: "birahagije too nakundi ",
+    image: "/boy.svg",
+    link: "/family/AERG",
+    members: 80,
   },
 ];
 
@@ -148,7 +168,8 @@ export const heroNew = [
     date: "4 days ago",
   },
   {
-    title: " upon a time in the quaint town of Harmonyville, there lived the PLP family",
+    title:
+      " upon a time in the quaint town of Harmonyville, there lived the PLP family",
     description: `Once upon a time in the quaint town of Harmonyville, there lived the PLP family – a peculiar and enchanting family known for their unique abilities and magical qualities. The PLP family consisted of four members: Penelope, the eldest and wise matriarch; Leo, the mischievous and adventurous son; Primrose, the sweet and gentle daughter; and Percival, the baby of the family who possessed extraordinary powers.
   
             The PLP family lived in a charming cottage nestled at the edge of the Enchanted Forest. Penelope, with her silver hair and sparkling blue eyes, was a skilled herbalist and wise woman who knew the secrets of the magical plants that grew in the forest. Leo, the energetic and curious teenager, had the ability to talk to animals and often ventured into the woods accompanied by his animal friends.
@@ -252,3 +273,67 @@ export const heroNew = [
     date: "4 days ago",
   },
 ];
+
+
+export const Users = [
+  {
+    name : "Irakiza Allen",
+    userName : "BrunoAllen",
+    posts : 12,
+    soilAccount : {
+      faceBookIcon : BsFacebook,
+      faceBookURL : "https://www.facebook.com/bruno_rwanda/?hl=en",
+      instagramIcon : BsInstagram,
+      instagramURL : "https://www.instagram.com/bruno_rwanda/?hl=en",
+    },
+    family : "H4",
+  },
+  {
+    name : "Ingirimpuhwe Fabrice",
+    userName : "Ingirimpuhwe",
+    posts : 2,
+    soilAccount : {
+      faceBookIcon : BsFacebook,
+      faceBookURL : "https://www.facebook.com/bruno_rwanda/?hl=en",
+      instagramIcon : BsInstagram,
+      instagramURL : "https://www.instagram.com/bruno_rwanda/?hl=en",
+    },
+    family : "PLP",
+  },
+  {
+    name : "Irakoze Chris",
+    userName : "Chris",
+    posts : 12,
+    soilAccount : {
+      faceBookIcon : BsFacebook,
+      faceBookURL : "https://www.facebook.com/bruno_rwanda/?hl=en",
+      instagramIcon : BsInstagram,
+      instagramURL : "https://www.instagram.com/bruno_rwanda/?hl=en",
+    },
+    family : "PLP",
+  },
+  {
+    name : "Bruno Rwanda",
+    userName : "brunoRwanda",
+    posts : 4,
+    soilAccount : {
+      faceBookIcon : BsFacebook,
+      faceBookURL : "https://www.facebook.com/bruno_rwanda/?hl=en",
+      instagramIcon : BsInstagram,
+      instagramURL : "https://www.instagram.com/bruno_rwanda/?hl=en",
+    },
+    family : "H4",
+  },
+  {
+    name : "Bruno Rwanda",
+    userName : "brunoRwanda",
+    posts : 4,
+    soilAccount : {
+      faceBookIcon : BsFacebook,
+      faceBookURL : "https://www.facebook.com/bruno_rwanda/?hl=en",
+      instagramIcon : BsInstagram,
+      instagramURL : "https://www.instagram.com/bruno_rwanda/?hl=en",
+    },
+    family : "H4",
+  },
+]
