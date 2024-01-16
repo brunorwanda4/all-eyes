@@ -1,7 +1,13 @@
+import { family } from "../../constants";
+
 const NewsUser: React.FC = () => {
     return ( 
         <div >
-            web users
+            {family.map((fam) => {
+                return (
+                    <div key={fam.username}></div>
+                )
+            })}
         </div>
      );
 }

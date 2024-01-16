@@ -5,7 +5,7 @@ import Logo from "../logo";
 
 const UserFooter = () => {
     return ( 
-        <footer className=" mt-4 flex gap-4 bg-white dark:bg-gray-900 px-4 py-2  justify-between text-white items-center">
+        <footer className=" mt-4 flex gap-4  px-4 py-2  justify-between  items-center">
             <div className=" flex flex-col gap-2">
                <Logo/>
             </div>
