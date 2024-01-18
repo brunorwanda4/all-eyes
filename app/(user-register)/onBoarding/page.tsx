@@ -2,21 +2,31 @@ import {currentUser} from "@clerk/nextjs"
 import OnBoardingCard from "../../../components/card/on-boarding-card";
 const OnBoardingPage = async () => {
     const user = await currentUser();
+  if (!user) return null; // to avoid typescript warnings
 
-    const userInfo = {};
+//   const userInfo = await fetchUser(user.id);
+//   if (userInfo?.onboarded) redirect("/");
 
-    const userData = {
-        id : user?.id,
-        image : userInfo?._id ,
-        username : userInfo.userInfo?.username || user?.username,
-        name : userInfo?.name || user?.firstName || "",
-        socialAccounts : userInfo?.socialAccounts || "" ,
-        avatar : userInfo?.avatar || user?.imageUrl,
-    }
+  // const userData = {
+  //   id: user.id,
+  //   objectId: userInfo?._id,
+  //   username: userInfo ? userInfo?.username : user.username,
+  //   name: userInfo ? userInfo?.name : user.firstName ?? "",
+  //   bio: userInfo ? userInfo?.bio : "",
+  //   image: userInfo ? userInfo?.image : user.imageUrl,
+  // };
     return ( 
         <main>
-            <OnBoardingCard 
-             User={userData} 
+            <div>
+                <h2 className=" text-2xl  font-semibold">
+                    Onboarding
+                </h2>
+                <p className=" text-gray-500 text-sm ">
+                    Complete your profile now to use <span className=" text-sky-500 group-name">Space to gether</span>
+                </p>
+            </div>
+            <OnBoardingCard
+            //  User={userData}
              btnTitle="Continue"
              />
         </main>

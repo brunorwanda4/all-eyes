@@ -9,6 +9,7 @@
         "lucide",
         "Mailchimp",
         "nextjs",
-        "prismadb"
+        "prismadb",
+        "shadcn"
     ]
 }

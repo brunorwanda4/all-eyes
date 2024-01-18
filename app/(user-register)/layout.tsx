@@ -15,7 +15,7 @@ const RegisterUserLayout = ({
                 <ModeToggle/>
             </div>
             <section className=" w-full h-[89vh] flex justify-center items-center flex-col gap-2">
-                <Link
+                {/* <Link
                  href={"/"}
                  >
                     <Image
@@ -24,7 +24,7 @@ const RegisterUserLayout = ({
                         height={150}
                         width={150}
                     />
-                </Link>
+                </Link> */}
                 {children}
             </section>
             <div className=" mt-4">
