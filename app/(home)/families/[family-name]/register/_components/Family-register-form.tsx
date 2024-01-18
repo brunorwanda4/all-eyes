@@ -1,10 +1,10 @@
 "use client"
 
 import { useCallback, useState } from "react";
-import FamilyRegisterInput from "./Family-register-input";
 import { FieldValues, useForm } from "react-hook-form";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import FamilyRegisterInput from "./Family-register-input";
 import FamilyRegisterTextarea from "./Family-register-textarea";
 import { Button } from "@/components/ui/button";
 import FamilyRegisterSocialButton from "./Family-register-social-button";

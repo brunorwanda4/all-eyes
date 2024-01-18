@@ -1,8 +1,7 @@
 import { ReactNode } from "react";
 import RegisterFooterUser from "@/components/footer/register-user";
 import { ModeToggle } from "@/components/mode-toggle";
-import Image from "next/image";
-import Link from "next/link";
+import UserRegister from "@/components/register/user-register";
 
 const RegisterUserLayout = ({
     children
@@ -14,17 +13,7 @@ const RegisterUserLayout = ({
             <div className=" text-end">
                 <ModeToggle/>
             </div>
-            <section className=" w-full h-[89vh] flex justify-center items-center flex-col gap-2">
-                <Link
-                 href={"/"}
-                 >
-                    <Image
-                        src={"/boy.svg"}
-                        alt="bruno rwanda"
-                        height={150}
-                        width={150}
-                    />
-                </Link>
+            <section className=" h-screen flex w-full justify-between">
                 {children}
             </section>
             <div className=" mt-4">

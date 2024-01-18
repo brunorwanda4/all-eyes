@@ -7,6 +7,8 @@
         "kinyinya",
         "longfazers",
         "lucide",
-        "Mailchimp"
+        "Mailchimp",
+        "NEXTAUTH",
+        "prismadb"
     ]
 }
