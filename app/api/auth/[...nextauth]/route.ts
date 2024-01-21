@@ -48,7 +48,6 @@ export const authOptions: AuthOptions = {
                 if (!isCorrectPassword) {
                     throw Error ("password not correct 😒😒")
                 }
-
                 return user;
             }
         })
