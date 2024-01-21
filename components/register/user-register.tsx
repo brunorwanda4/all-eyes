@@ -11,7 +11,8 @@ import FamilyRegisterInput from "@/app/(home)/families/[family-name]/register/_c
 import FamilyRegisterTextarea from "@/app/(home)/families/[family-name]/register/_components/Family-register-textarea";
 import FamilyRegisterSocialButton from "@/app/(home)/families/[family-name]/register/_components/Family-register-social-button";
 import { Input } from "../ui/input";
-import {toaster} from "react-hot-toast";
+import {toast} from "react-hot-toast";
+import { signIn } from "next-auth/react"
 
 
 type Variant = "Login"  | "Register"
@@ -41,11 +42,22 @@ const UserRegister: React.FC = () => {
 
         if (variant === "Register"){
             axios.post("/api/register" , data)
-            .catch(() => toaster.error(""))
+            .catch(() => toast.error("something wait log 😭😭"))
+            .finally(() => setIsLoading(false))
         }
-
         if (variant === "Login" ) {
-            // login
+            signIn("credentials", {
+                ...data,
+                redirect: false,
+            })
+            .then((callback)=> {
+                if(callback?.error) {
+                    toast.error("Invalid credentials 😣");
+                }
+                if(callback?.ok) {
+                    toast.success("welcome back 😄😄")
+                }
+            }).finally(() => setIsLoading(false))
         }
     }
    
@@ -58,7 +70,7 @@ const UserRegister: React.FC = () => {
             {variant === "Register" && (
                 <FamilyRegisterInput
                  label="Your full name "
-                 id="fullName"
+                 id="name"
                  disabled= {isLoading}
                  register = {register}
                  errors={errors}

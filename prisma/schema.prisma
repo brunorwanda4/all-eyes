@@ -1,0 +1,182 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mongodb"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id             String  @id @default(auto()) @map("_id") @db.ObjectId
+    name           String
+    email          String  @unique
+    username       String  @unique
+    avatar         String?
+    hashedPassword String?
+    socialAccounts String?
+    gender         String?
+
+    posts   Posts[]
+
+    comments Comments[]
+
+    created DateTime  @default(now())
+    updated DateTime  @updatedAt
+    Account Account[]
+}
+
+model Posts {
+    id     String  @id @default(auto()) @map("_id") @db.ObjectId
+    body   String?
+    images String?
+
+    userId String @db.ObjectId
+    posted User   @relation(fields: [userId], references: [id])
+
+    comments Comments[]
+
+    created DateTime @default(now())
+    updated DateTime @updatedAt
+}
+
+model Comments {
+    id   String  @id @default(auto()) @map("_id") @db.ObjectId
+    body String?
+
+    postsId String @db.ObjectId
+    post    Posts  @relation(fields: [postsId], references: [id])
+
+    commentedByIds String[] @db.ObjectId
+    comentedby     User     @relation(fields: [commentedByIds], references: [id])
+
+    created DateTime @default(now())
+    updated DateTime @updatedAt
+}
+
+model Children {
+    id             String   @id @default(auto()) @map("_id") @db.ObjectId
+    userName       String?
+    email          String?
+    avatar         String?
+    name           String?
+    descrition     String?
+    hashedPassword String?
+    socialAccounts String?
+    gender         String?
+    isAdmin        Boolean?
+
+    seenMessageIds String[]  @db.ObjectId
+    seenMessage    Message[] @relation("seen", fields: [seenMessageIds], references: [id])
+
+    posts    FamilyPost[]
+    comments FamilyComments[]
+    likes    Likes[]
+
+    family    Family? @relation(fields: [familyIds], references: [id])
+    familyIds String? @db.ObjectId
+
+    created DateTime  @default(now())
+    update  DateTime  @updatedAt
+    Message Message[]
+    Account Account[]
+
+    @@unique([email, userName])
+}
+
+model Family {
+    id       String @id @default(auto()) @map("_id") @db.ObjectId
+    username String @unique
+
+    chlidren Children[]
+
+    familyPost FamilyPost[]
+    messages   Message[]
+
+    created DateTime @default(now())
+    updated DateTime @updatedAt
+}
+
+model FamilyPost {
+    id    String  @id @default(auto()) @map("_id") @db.ObjectId
+    body  String?
+    image String?
+
+    childrenPosted     Children? @relation(fields: [childrenIdPostedId], references: [id])
+    childrenIdPostedId String?   @db.ObjectId
+    family             Family?   @relation(fields: [familyId], references: [id])
+    familyId           String?   @db.ObjectId
+
+    familyComments FamilyComments[]
+    likes          Likes[]
+
+    created DateTime @default(now())
+    updated DateTime @updatedAt
+}
+
+model FamilyComments {
+    id   String  @id @default(auto()) @map("_id") @db.ObjectId
+    body String?
+
+    postId String     @db.ObjectId
+    post   FamilyPost @relation(fields: [postId], references: [id])
+
+    childrenComment    Children? @relation(fields: [childrenIdComments], references: [id])
+    childrenIdComments String?   @db.ObjectId
+
+    created DateTime @default(now())
+    update  DateTime @updatedAt
+}
+
+model Likes {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+
+    postId String     @db.ObjectId
+    post   FamilyPost @relation(fields: [postId], references: [id])
+
+    children   Children? @relation(fields: [childrenId], references: [id])
+    childrenId String?   @db.ObjectId
+
+    created DateTime @default(now())
+}
+
+model Message {
+    id    String  @id @default(auto()) @map("_id") @db.ObjectId
+    body  String?
+    image String?
+
+    sender   Children? @relation(fields: [senderId], references: [id])
+    senderId String?   @db.ObjectId
+
+    seenIds String[]   @db.ObjectId
+    seen    Children[] @relation("seen", fields: [seenIds], references: [id])
+
+    family   Family? @relation(fields: [familyId], references: [id])
+    familyId String? @db.ObjectId
+
+    created DateTime @default(now())
+}
+
+model Account {
+    id                String  @id @default(auto()) @map("_id") @db.ObjectId
+    userId            String  @db.ObjectId
+    type              String
+    provider          String
+    providerAccountId String
+    refresh_token     String? @db.String
+    access_token      String? @db.String
+    expires_at        Int?
+    token_type        String?
+    scope             String?
+    id_token          String? @db.String
+    session_state     String?
+    childrenId        String  @db.ObjectId
+
+    user     User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+    children Children? @relation(fields: [childrenId], references: [id])
+
+    @@unique([provider, providerAccountId])
+}

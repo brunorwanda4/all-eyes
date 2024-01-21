@@ -22,11 +22,11 @@ export const authOptions: AuthOptions = {
             name: "credentials",
             credentials: {
                 email : {label : "email", type: "text"},
-                username: {label : "email", type: "text"},
+                username: {label : "username", type: "text"},
                 password : {label : "password", type: "password"},
             },
             async authorize(credentials) {
-                if(!credentials?.email || !credentials?.password || !credentials.username){
+                if(!credentials?.email || !credentials?.password || !credentials?.username){
                     throw new Error ("all flied are required 😡😡");
                 }
 
