@@ -25,6 +25,7 @@ import {
   DrawerTrigger,
 } from "./ui/drawer";
 import UserSearch from "./navbar/user-search";
+import { UserButton } from "@clerk/nextjs";
 
 const UserNavbar = () => {
   // scrolling hidden nav bar
@@ -183,13 +184,10 @@ const UserNavbar = () => {
             <span className=" lg:flex hidden">Bruno_rwanda</span>
           </Link>
           <div>
-            <Link
-              href={"/create-account"}
-              className=" flex gap-2 hover:text-rose-500 duration-300 group"
-            >
+          <UserButton afterSignOutUrl="/">
               <FiLogIn className="text-xl group-hover:scale-105 " />
               <span className=" lg:flex hidden">Logout</span>
-            </Link>
+              </UserButton>
           </div>
         </div>
         <ModeToggle />
