@@ -4,7 +4,7 @@ import UserSchemaDB from "../models/User";
 import { connectMongoDB } from "../mongodb";
 import { revalidatePath } from "next/cache";
 
-export async function updateUser(
+interface Params {
   userId: string,
   username: string,
   name: string,
@@ -12,6 +12,18 @@ export async function updateUser(
   phoneNumber: string,
   image: string,
   path: string,
+}
+
+export async function updateUser(
+{
+  userId,
+  username,
+  name,
+  socialAccount,
+  image,
+  path,
+  phoneNumber
+} : Params
 ): Promise<void> {
   connectMongoDB();
 

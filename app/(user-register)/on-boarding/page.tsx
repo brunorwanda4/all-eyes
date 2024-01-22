@@ -1,20 +1,20 @@
 import {currentUser} from "@clerk/nextjs"
+import { redirect } from "next/navigation";
 import OnBoardingCard from "../../../components/card/on-boarding-card";
+
 const OnBoardingPage = async () => {
-    const user = await currentUser();
-  if (!user) return null; // to avoid typescript warnings
+//     const user = await currentUser();
+//   if (!user) return null; // to avoid typescript warnings
 
-  const userInfo = await fetchUser(user.id);
-  if (userInfo?.onboarded) redirect("/");
 
-  const userData = {
-    id: user.id,
-    objectId: userInfo?._id,
-    username: userInfo ? userInfo?.username : user.username,
-    name: userInfo ? userInfo?.name : user.firstName ?? "",
-    bio: userInfo ? userInfo?.bio : "",
-    image: userInfo ? userInfo?.image : user.imageUrl,
-  };
+//   const userData = {
+//     id: user.id,
+//     objectId: userInfo?._id,
+//     username: userInfo ? userInfo?.username : user.username,
+//     name: userInfo ? userInfo?.name : user.firstName ?? "",
+//     bio: userInfo ? userInfo?.bio : "",
+//     image: userInfo ? userInfo?.image : user.imageUrl,
+//   };
     return ( 
         <main>
             <div>
@@ -26,8 +26,8 @@ const OnBoardingPage = async () => {
                 </p>
             </div>
             <OnBoardingCard
-             User={userData}
-             btnTitle="Continue"
+            //  User={userData}
+            //  btnTitle="Continue"
              />
         </main>
      );

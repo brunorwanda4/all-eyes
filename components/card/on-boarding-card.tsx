@@ -18,6 +18,8 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import Image from "next/image";
 import { ChangeEvent, useState } from "react";
+import { Label } from "../ui/label";
+import {BsCamera} from "react-icons/bs"
 
 interface Props {
   User: {
@@ -27,11 +29,14 @@ interface Props {
     socialAccount: string;
     avatar: string;
     name: string;
+    phoneNumber : string,
   };
   btnTitle: string;
 }
 
-const OnBoardingCard = ({ User, btnTitle }: Props) => {
+const OnBoardingCard = (
+  { User, btnTitle }: Props
+  ) => {
   const [file, setFile] = useState<File[]>([]);
   const formSchema = z.object({
     username: z.string().min(2, {
@@ -73,46 +78,84 @@ const OnBoardingCard = ({ User, btnTitle }: Props) => {
       name: User?.name || "",
       avatar: User?.avatar || "",
       socialAccount: User?.socialAccount || "",
+      phoneNumber : "",
     },
   });
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 bg-white dark:bg-gray-900"
+        className="space-y-8 bg-white dark:bg-gray-900 w-[750px] h-[450px] rounded-md shadow-lg px-4 py-2 "
       >
         <FormField
           control={form.control}
           name="username"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>
-                {field.value ? (
-                  <Image
-                    src={field.value}
-                    alt="profile photo"
-                    height={96}
-                    width={96}
-                    className=" rounded-full object-cover"
+              <div className=" flex  gap-4 items-center">
+                <FormLabel htmlFor=" image" className=" flex items-center gap-4 ">
+                  {field.value ? (
+                    <Image
+                      src={field.value}
+                      alt="profile photo"
+                      height={96}
+                      width={96}
+                      className=" rounded-full object-cover cursor-pointer "
+                    />
+                  ) : (
+                    <Image
+                      src="/bruno.jpg"
+                      alt="profile image"
+                      height={96}
+                      width={96}
+                      className=" rounded-full object-cover cursor-pointer "
+                      onClick={(e) => handleImage(e, field.onChange)}
+                    />
+                  )}
+                  <label htmlFor="image" className=" label cursor-pointer flex gap-3 text-lg  text-gray-500 ">
+                    <span>
+                      Upload profile image
+                    </span>
+                    <BsCamera className="text-sky-500 text-xl "/>
+                  </label>
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    type="file"
+                    accept="image/*"
+                    placeholder="upload a photo"
+                    id="image"
+                    className=" hidden"
                   />
-                ) : (
-                  <Image
-                    src="/bruno.jpg"
-                    alt="profile image"
-                    height={96}
-                    width={96}
-                    className=" rounded-full object-cover"
-                    onClick={(e) => handleImage(e, field.onChange)}
-                  />
-                )}
-              </FormLabel>
-              <FormControl>
-                <Input
-                  type="file"
-                  accept="image/*"
-                  placeholder="upload a photo"
-                />
-              </FormControl>
+                </FormControl>
+              </div>
+              {/* full name */}
+              <div className=" flex flex-col mt-6 gap-2" >
+                <FormLabel className={" text-sm text-gray-500 "}>
+                  Your full name
+                </FormLabel>
+                <FormControl>
+                  <Input placeholder="Your full name" />
+                </FormControl>
+              </div>
+              {/* username */}
+              <div className=" flex flex-col mt-4 gap-2" >
+                <FormLabel className={" text-sm text-gray-500 "}>
+                  Your username
+                </FormLabel>
+                <FormControl>
+                  <Input placeholder="username" />
+                </FormControl>
+              </div>
+              {/* phone number */}
+              <div className=" flex flex-col mt-4 gap-2" >
+                <FormLabel className={" text-sm text-gray-500 "}>
+                  You phone umber
+                </FormLabel>
+                <FormControl>
+                  <Input placeholder="+250 792 537 274" />
+                </FormControl>
+              </div>
               <FormMessage />
             </FormItem>
           )}
