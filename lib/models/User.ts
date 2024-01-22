@@ -1,51 +1,33 @@
 import mongoose, { Document, Schema } from "mongoose";
 
-interface IUser extends Document {
-  username: string;
-  avatar: string;
-  email: string;
-  name: string;
-  family?: mongoose.Schema.Types.ObjectId[];
-  news?: mongoose.Schema.Types.ObjectId[];
-  messages?: mongoose.Schema.Types.ObjectId[];
-}
+const userSchema = new mongoose.Schema({
+  id: { type: String, required: true },
+  username: { type: String, required: true, unique: true },
+  name: { type: String, required: true },
+  image: { type: String },
+  phoneNumber: { type: String },
+  socialAccount: { type: String },
+  post: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Posts",
+    },
+  ],
+  family: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Families",
+    },
+  ],
+  bio: { type: String },
+  messages: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Messages",
+    },
+  ],
+});
 
-const UserSchema = new Schema<IUser>(
-  {
-    username: {
-      type: String,
-      required: true,
-    },
-    email: {
-      type: String,
-      required: true,
-    },
-    name: {
-      type: String,
-      required: true,
-    },
-    family: {
-      type: [Schema.Types.ObjectId],
-      ref: "Family",
-    },
-    avatar : {
-      type: String,
-      required: false,
-    },
-    news: {
-      type: [Schema.Types.ObjectId],
-      ref: "News",
-    },
-    messages: {
-      type: [Schema.Types.ObjectId],
-      ref: "Message",
-    },
-  },
-  {
-    timestamps: true,
-  }
-);
+const UserSchemaDB = mongoose.models.User || mongoose.model("User", userSchema);
 
-const User = mongoose.models.User || mongoose.model<IUser>("User", UserSchema);
-
-export default User;
+export default UserSchemaDB;

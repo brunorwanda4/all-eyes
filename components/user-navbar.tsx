@@ -9,7 +9,8 @@ import { useTheme } from "next-themes";
 import clsx from "clsx";
 import { Moon, Sun } from "lucide-react";
 import { HiArrowLeftOnRectangle } from "react-icons/hi2";
-
+import { CiLogout } from "react-icons/ci";
+import { dark } from "@clerk/themes";
 // local page
 
 import Logo from "./logo";
@@ -25,7 +26,7 @@ import {
   DrawerTrigger,
 } from "./ui/drawer";
 import UserSearch from "./navbar/user-search";
-import { UserButton } from "@clerk/nextjs";
+import { OrganizationSwitcher, SignedIn, SignOutButton } from "@clerk/nextjs";
 
 const UserNavbar = () => {
   // scrolling hidden nav bar
@@ -184,11 +185,22 @@ const UserNavbar = () => {
             <span className=" lg:flex hidden">Bruno_rwanda</span>
           </Link>
           <div>
-          <UserButton afterSignOutUrl="/">
-              <FiLogIn className="text-xl group-hover:scale-105 " />
-              <span className=" lg:flex hidden">Logout</span>
-              </UserButton>
+            <SignedIn>
+              <SignOutButton>
+                  <div className=" btn">
+                    <CiLogout />
+                  </div>
+              </SignOutButton>
+            </SignedIn>
           </div>
+          <OrganizationSwitcher
+          appearance={{
+            baseTheme: dark,
+            elements: {
+              organizationSwitcherTrigger: "py-2 px-4",
+            },
+          }}
+        />
         </div>
         <ModeToggle />
       </div>
