@@ -14,7 +14,7 @@ const RegisterUserLayout = ({
             <div className=" text-end">
                 <ModeToggle/>
             </div>
-            <section className=" w-full h-[89vh] flex justify-center items-center flex-col gap-2">
+            <section className=" w-full h-[88.3vh] flex justify-center items-center flex-col gap-2">
                 {children}
             </section>
             <div className=" mt-4">

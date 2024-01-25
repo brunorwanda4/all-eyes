@@ -19,7 +19,7 @@ import * as z from "zod";
 import Image from "next/image";
 import { ChangeEvent, useState } from "react";
 import { Label } from "../ui/label";
-import {BsCamera} from "react-icons/bs"
+import { BsCamera, BsInstagram } from "react-icons/bs";
 
 interface Props {
   User: {
@@ -29,14 +29,12 @@ interface Props {
     socialAccount: string;
     avatar: string;
     name: string;
-    phoneNumber : string,
+    phoneNumber: string;
   };
   btnTitle: string;
 }
 
-const OnBoardingCard = (
-  { User, btnTitle }: Props
-  ) => {
+const OnBoardingCard = ({ User, btnTitle }: Props) => {
   const [file, setFile] = useState<File[]>([]);
   const formSchema = z.object({
     username: z.string().min(2, {
@@ -46,7 +44,7 @@ const OnBoardingCard = (
   // upload image
   const handleImage = (
     e: ChangeEvent<HTMLInputElement>,
-    fieldChange: (value: string) => void
+    fieldChange: (value: string) => void,
   ) => {
     e.preventDefault();
 
@@ -78,14 +76,14 @@ const OnBoardingCard = (
       name: User?.name || "",
       avatar: User?.avatar || "",
       socialAccount: User?.socialAccount || "",
-      phoneNumber : "",
+      phoneNumber: "",
     },
   });
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 bg-white dark:bg-gray-900 w-[750px] h-[450px] rounded-md shadow-lg px-4 py-2 "
+        className="space-y-8 bg-white dark:bg-gray-900 w-[750px] rounded-md shadow-lg px-4 py-2 "
       >
         <FormField
           control={form.control}
@@ -93,7 +91,10 @@ const OnBoardingCard = (
           render={({ field }) => (
             <FormItem>
               <div className=" flex  gap-4 items-center">
-                <FormLabel htmlFor=" image" className=" flex items-center gap-4 ">
+                <FormLabel
+                  htmlFor=" image"
+                  className=" flex items-center gap-4 "
+                >
                   {field.value ? (
                     <Image
                       src={field.value}
@@ -112,11 +113,12 @@ const OnBoardingCard = (
                       onClick={(e) => handleImage(e, field.onChange)}
                     />
                   )}
-                  <label htmlFor="image" className=" label cursor-pointer flex gap-3 text-lg  text-gray-500 ">
-                    <span>
-                      Upload profile image
-                    </span>
-                    <BsCamera className="text-sky-500 text-xl "/>
+                  <label
+                    htmlFor="image"
+                    className=" label cursor-pointer flex gap-3 text-lg  text-gray-500 "
+                  >
+                    <span>Upload profile image</span>
+                    <BsCamera className="text-sky-500 text-xl " />
                   </label>
                 </FormLabel>
                 <FormControl>
@@ -129,38 +131,78 @@ const OnBoardingCard = (
                   />
                 </FormControl>
               </div>
-              {/* full name */}
-              <div className=" flex flex-col mt-6 gap-2" >
-                <FormLabel className={" text-sm text-gray-500 "}>
-                  Your full name
-                </FormLabel>
-                <FormControl>
-                  <Input placeholder="Your full name" />
-                </FormControl>
-              </div>
-              {/* username */}
-              <div className=" flex flex-col mt-4 gap-2" >
-                <FormLabel className={" text-sm text-gray-500 "}>
-                  Your username
-                </FormLabel>
-                <FormControl>
-                  <Input placeholder="username" />
-                </FormControl>
-              </div>
-              {/* phone number */}
-              <div className=" flex flex-col mt-4 gap-2" >
-                <FormLabel className={" text-sm text-gray-500 "}>
-                  You phone umber
-                </FormLabel>
-                <FormControl>
-                  <Input placeholder="+250 792 537 274" />
-                </FormControl>
+              <div className=" flex  w-full gap-2 ">
+                <div className=" w-full flex flex-col gap-2 ">
+                  <div className=" flex flex-col mt-6 gap-2">
+                    {/* full name */}
+                    <FormLabel className={" text-sm text-gray-500 "}>
+                      Your full name
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Your full name"
+                        pattern="[A-Za-z]+"
+                        autoFocus
+                        className=" w-full"
+                      />
+                    </FormControl>
+                  </div>
+                  {/* username */}
+                  <div className=" flex flex-col mt-4 gap-2">
+                    <FormLabel className={" text-sm text-gray-500 "}>
+                      Your username
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="username"
+                        pattern="[A-Za-z]+"
+                        className=" w-full"
+                      />
+                    </FormControl>
+                  </div>
+                </div>
+                {/* phone number */}
+                <div className=" w-full flex flex-col gap-2 ">
+                  <div className=" flex flex-col mt-4 gap-2">
+                    <FormLabel className={" text-sm text-gray-500 "}>
+                      Your phone number
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        type="number"
+                        placeholder="+250 792 537 274"
+                        className=" w-full"
+                      />
+                    </FormControl>
+                  </div>
+                  {/*  social account */}
+                  <div className=" flex flex-col mt-4 gap-2">
+                    <FormLabel className={" text-sm text-gray-500 "}>
+                      Your social account
+                    </FormLabel>
+                    <div className=" flex gap-2 items-center">
+                      {/* icon */}
+                      <FormControl>
+                        <Input
+                          placeholder="username on Instagram"
+                          className=" w-full"
+                        />
+                        <BsInstagram className=" text-4xl text-gray-500 " />
+                      </FormControl>
+                    </div>
+                  </div>
+                </div>
               </div>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button
+          type="submit"
+          className=" w-full dark:bg-gray-800 hover:dark:bg-sky-500 duration-300 dark:text-white bg-sky-200 text-black hover:bg-sky-500"
+        >
+          Create
+        </Button>
       </form>
     </Form>
   );

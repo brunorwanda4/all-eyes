@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const Loading = () => {
     return ( 
-        <div className=" w-full bg-white dark:bg-gray-950 h-full">
-            <div className='body'>
+        <div className=" overflow-hidden w-full bg-white dark:bg-gray-950 h-full">
+            <div className='body overflow-x-hidden'>
                 <span>
                     <span></span>
                     <span></span>

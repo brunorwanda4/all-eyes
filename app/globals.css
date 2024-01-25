@@ -75,7 +75,7 @@
     @apply border-border;
   }
   body {
-    @apply dark:bg-slate-950 bg-slate-200 text-foreground h-full w-full;
+    @apply dark:bg-slate-950 bg-slate-200 text-foreground h-full w-full overflow-x-hidden;
   }
 }
 
@@ -94,6 +94,7 @@
   left: 50%;
   top: 58%;
   margin-left: -20px;
+  /* overflow-x: hidden; */
 }
 
 .body {
@@ -102,7 +103,7 @@
   margin-left: -50px;
   left: 50%;
   animation: speeder .4s linear infinite;
-
+  /* overflow-x: hidden; */
   > span {
     height: 5px;
     width: 35px;

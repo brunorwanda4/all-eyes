@@ -8,7 +8,6 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { BsHouse, BsPeople, BsSearch, BsMessenger, BsHouseFill } from "react-icons/bs";
 import { HiArrowLeftOnRectangle } from "react-icons/hi2";
-import { LuPlusSquare } from "react-icons/lu";
 import Search from "./search";
 import { FaFacebookMessenger} from "react-icons/fa";
 import {IoIosCreate} from "react-icons/io";

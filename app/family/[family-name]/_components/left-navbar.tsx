@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const LeftNavbar = () => {
     return ( 
-        <aside className=" h-screen dark:bg-gray-900 bg-white hidden flex-col w-80 xl:flex px-2">
+        <aside className=" h-screen dark:bg-gray-900 bg-white hidden flex-col w-80 md:flex px-2">
             <div>
                 <h3 className=" text-2xl text-sky-500 font-bold  group-name text-center"> Family parent</h3>
                 <div className=" flex flex-col gap-2">

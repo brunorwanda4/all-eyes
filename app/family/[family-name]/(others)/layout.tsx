@@ -9,7 +9,7 @@ const FamilyLayout = ({
 }) => {
     return (
         <main className=" flex flex-col w-full">
-            <div className="">
+            <div className=" w-full h-full">
                 <MobileNavbar/>
             </div>
             <div className=" w-full flex md:mt-0 mt-12">

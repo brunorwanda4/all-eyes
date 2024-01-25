@@ -22,7 +22,7 @@ const OnBoardingPage = async () => {
                     Onboarding
                 </h2>
                 <p className=" text-gray-500 text-sm ">
-                    Complete your profile now to use <span className=" text-sky-500 group-name">Space to gether</span>
+                    Create your Profile
                 </p>
             </div>
             <OnBoardingCard

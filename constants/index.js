@@ -23,6 +23,65 @@ export const navbarListUser = [
   },
 ];
 
+export const newUser = [
+  {
+    fullName: "Rwanda Bruno Happyheart",
+    username: "bruno_rwanda",
+    image: "/bruno.jpg",
+    soilAccount: "bruno_rwanda",
+    family: "Computer Skills"
+  },
+  {
+    fullName: "Irakiza Allen Bruno",
+    username: "Allen_bruno",
+    image: "/004.jpg",
+    soilAccount: "Allen_bruno",
+    family: "computer Skills"
+  },
+  {
+    fullName: "Irakoze Chris",
+    username: "irakoze_Chris",
+    image: "/bruno.jpg",
+    soilAccount: "irakoze_Chris",
+    family: "Peace"
+  },
+  {
+    fullName: "Shyaka Ngago karike",
+    username: "bwenge",
+    image: "/004.jpg",
+    soilAccount: "shyaka_ngago",
+    family: "Shyaka"
+  },
+  {
+    fullName: "Shyaka Ngago karike",
+    username: "muhire",
+    image: "/004.jpg",
+    soilAccount: "shyaka_ngago",
+    family: "Shyaka"
+  },
+  {
+    fullName: "Shyaka Ngago karike",
+    username: "shyaka",
+    image: "/004.jpg",
+    soilAccount: "shyaka_ngago",
+    family: "Shyaka"
+  },
+  {
+    fullName: "Shyaka Ngago karike",
+    username: "muteza intare",
+    image: "/004.jpg",
+    soilAccount: "shyaka_ngago",
+    family: "Shyaka"
+  },
+  {
+    fullName: "Shyaka Ngago karike",
+    username: "muhire",
+    image: "/004.jpg",
+    soilAccount: "shyaka_ngago",
+    family: "Shyaka"
+  },
+];
+
 export const family = [
   {
     name: "Peace and love",
@@ -102,7 +161,7 @@ export const popularNews = [
       "plp family they help people From kinyinya sector give student book and other student property can use in school",
     logo: "/plp-logo.jpg",
     image: "/004.jpg",
-    name: "PLP",
+    name: "Club",
   },
   {
     title: "What is you favorite color",
@@ -111,7 +170,7 @@ export const popularNews = [
       "plp family they help people From kinyinya sector give student book and other student property can use in school",
     logo: "/plp-logo.jpg",
     image: "/plp-logo.jpg",
-    name: "PLP",
+    name: "Club",
   },
   {
     title: "Why people love to have family in school",
@@ -119,7 +178,7 @@ export const popularNews = [
     description: "plp family they help people From kinyinya ",
     logo: "/plp-logo.jpg",
     image: "/004.jpg",
-    name: "PLP",
+    name: "Club",
   },
   {
     title: " i can not remember this school ",
@@ -128,7 +187,7 @@ export const popularNews = [
       "plp family they help people From kinyinya sector give student book and other student property can use in school",
     logo: "/plp-logo.jpg",
     image: "/004.jpg",
-    name: "PLP",
+    name: "Club",
   },
   {
     title: "Do you know Rwanda Bruno Happy heart",
@@ -137,7 +196,7 @@ export const popularNews = [
       "plp family they help people From kinyinya sector give student book and other student property can use in school",
     logo: "/plp-logo.jpg",
     image: "/004.jpg",
-    name: "PLP",
+    name: "Club",
   },
 ];
 export const heroNew = [
